@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_01_184812) do
+ActiveRecord::Schema.define(version: 2021_06_01_200923) do
 
   create_table "cars", force: :cascade do |t|
     t.string "brand"
     t.string "model"
     t.integer "msrp"
-    t.integer "favorite_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -28,6 +27,8 @@ ActiveRecord::Schema.define(version: 2021_06_01_184812) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "car_id"
+    t.index ["car_id"], name: "index_favorites_on_car_id"
   end
 
+  add_foreign_key "favorites", "cars"
 end
