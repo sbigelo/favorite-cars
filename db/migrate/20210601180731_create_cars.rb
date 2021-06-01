@@ -4,7 +4,8 @@ class CreateCars < ActiveRecord::Migration[6.1]
       t.string :brand
       t.string :model
       t.integer :msrp
-      
+      t.integer :favorite_id
+
       t.timestamps
     end
   end
