@@ -1,8 +1,9 @@
-class Api::V1::FavoritesController < ApplicationController
+class FavoritesController < ApplicationController
 
     def index
-        favorites = Favorite.all
-        render json: favorites
+        render :json => Favorite.all
+        # favorites = Favorite.all
+        # render json: favorites
     end
 
     def create
